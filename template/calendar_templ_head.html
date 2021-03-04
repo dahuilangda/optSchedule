@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<link href='script/fullcalendar/packages/core/main.css' rel='stylesheet' />
+<link href='script/fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
+<link href='script/fullcalendar/packages/timegrid/main.css' rel='stylesheet' />
+<link href='script/fullcalendar/packages/list/main.css' rel='stylesheet' />
+<script src='script/fullcalendar/packages/core/main.js'></script>
+<script src='script/fullcalendar/packages/core/locales-all.js'></script>
+<script src='script/fullcalendar/packages/interaction/main.js'></script>
+<script src='script/fullcalendar/packages/daygrid/main.js'></script>
+<script src='script/fullcalendar/packages/timegrid/main.js'></script>
+<script src='script/fullcalendar/packages/list/main.js'></script>
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      plugins: [ 'dayGrid', 'timeGrid', 'list', 'interaction' ],
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+      },
+      defaultDate: '2020-02-12',
+      navLinks: true, // can click day/week names to navigate views
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      events: [
